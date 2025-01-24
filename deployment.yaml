@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: refor-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: refor-api
+  template:
+    metadata:
+      labels:
+        app: refor-api
+    spec:
+      containers:
+        - name: refor-api
+          image: gcr.io/${{ secrets.GCP_PROJECT_ID }}/refor-api
+          ports:
+            - containerPort: 8080
