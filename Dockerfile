@@ -7,6 +7,5 @@ RUN gradle build --no-daemon
 # Use the official OpenJDK image to run the application
 FROM openjdk:21-jdk-slim
 EXPOSE 8080
-ARG JAR_FILE=build/libs/*.jar
-COPY --from=build /home/gradle/src/${JAR_FILE} app.jar
+COPY --from=build /home/gradle/src/build/libs/refor-api.jar app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
