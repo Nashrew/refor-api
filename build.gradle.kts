@@ -40,3 +40,7 @@ kotlin {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+tasks.jar {
+	archiveFileName.set("refor-api.jar")
+}
