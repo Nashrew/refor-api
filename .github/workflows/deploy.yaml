@@ -41,7 +41,7 @@ jobs:
 
       - name: Configure kubectl
         run: |
-          gcloud container clusters get-credentials refor-cluster --zone us-central1-a
+          gcloud container clusters get-credentials refor-cluster --zone us-east1-b
 
       - name: Deploy to GKE
         run: |
