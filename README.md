@@ -46,9 +46,6 @@ Flyway is used to manage database migrations. Migrations are SQL scripts that de
 -----------------------------------
 
 ## TODO / Next Steps
-* TF (or w/e iac) + GitHub Actions for pipeline
 * Tests (:
-* TF + GitHub Actions for pipeline
-    * Consider adding a real DB at this time, although maybe not for simplicity's sake
 * Swagger for funsies probably
-* Move on to a FE?
+* Move on to a FE? Try Cursor.
