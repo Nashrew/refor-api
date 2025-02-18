@@ -46,6 +46,6 @@ Flyway is used to manage database migrations. Migrations are SQL scripts that de
 -----------------------------------
 
 ## TODO / Next Steps
-* Tests (:
+* Tests? (: (although, maybe it should actually _do_ something first)
 * Swagger for funsies probably
 * Move on to a FE? Try Cursor.
