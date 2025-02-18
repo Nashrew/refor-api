@@ -92,9 +92,6 @@ The deployment configuration is defined in the following files:
 -----------------------------------
 
 ## TODO / Next Steps
-* TF (or w/e iac) + GitHub Actions for pipeline
 * Tests (:
-* TF + GitHub Actions for pipeline
-    * Consider adding a real DB at this time, although maybe not for simplicity's sake
 * Swagger for funsies probably
-* Move on to a FE?
+* Move on to a FE? Try Cursor maybe.
