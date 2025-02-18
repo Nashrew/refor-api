@@ -45,7 +45,56 @@ Flyway is used to manage database migrations. Migrations are SQL scripts that de
     ```
 -----------------------------------
 
+## Deployment to GCP using GitHub Actions
+
+This project is configured to deploy to Google Cloud Platform (GCP) using GitHub Actions. The deployment process involves building a Docker image, pushing it to Google Container Registry (GCR), and deploying it to Google Kubernetes Engine (GKE).
+
+### Prerequisites
+
+1. **GCP Project**: Ensure you have a GCP project set up.
+2. **GKE Cluster**: Create a GKE cluster.
+3. **Service Account**: Create a service account with the necessary permissions and download the JSON key file.
+4. **GitHub Secrets**: Add the following secrets to your GitHub repository:
+    - `GCP_PROJECT_ID`: Your GCP project ID.
+    - `GCP_SA_KEY`: The JSON key file content of your service account.
+
+### GitHub Actions Workflow
+
+The deployment process is defined in the `.github/workflows/deploy.yaml` file. It consists of two jobs: `build` and `deploy`.
+
+#### Build Job
+
+1. **Checkout Code**: Checks out the repository code.
+2. **Set up Cloud SDK**: Sets up the Google Cloud SDK.
+3. **Build and Push Docker Image**: Builds the Docker image and pushes it to GCR.
+
+#### Deploy Job
+
+1. **Checkout Code**: Checks out the repository code.
+2. **Set up Cloud SDK**: Sets up the Google Cloud SDK.
+3. **Install gke-gcloud-auth-plugin**: Installs the GKE auth plugin.
+4. **Configure kubectl**: Configures `kubectl` to use the GKE cluster.
+5. **Deploy to GKE**: Deploys the application to GKE using `kubectl`.
+
+### Deployment Configuration
+
+The deployment configuration is defined in the following files:
+
+- `cloudbuild.yaml`: Defines the steps to build and push the Docker image.
+- `deployment.yaml`: Defines the Kubernetes deployment.
+- `service.yaml`: Defines the Kubernetes service.
+
+### Steps to Deploy
+
+1. **Push to Main Branch**: Push your changes to the `main` branch.
+2. **GitHub Actions**: GitHub Actions will automatically trigger the deployment workflow.
+
+-----------------------------------
+
 ## TODO / Next Steps
-* Tests? (: (although, maybe it should actually _do_ something first)
+* TF (or w/e iac) + GitHub Actions for pipeline
+* Tests (:
+* TF + GitHub Actions for pipeline
+    * Consider adding a real DB at this time, although maybe not for simplicity's sake
 * Swagger for funsies probably
-* Move on to a FE? Try Cursor.
+* Move on to a FE?
