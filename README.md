@@ -92,6 +92,5 @@ The deployment configuration is defined in the following files:
 -----------------------------------
 
 ## TODO / Next Steps
-* Tests (:
-* Swagger for funsies probably
+* Tests? (:
 * Move on to a FE? Try Cursor maybe.
